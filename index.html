@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
     <head>
-	    <title>Togo health map by degninou.net</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
@@ -24,7 +23,6 @@
         <title></title>
     </head>
     <body>
-	
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
@@ -64,9 +62,9 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        })
+        }).fitBounds([[6.58083192725,-2.03305675297],[10.2307005343,4.25542466549]]);
         var hash = new L.Hash(map);
-		map.attributionControl.addAttribution('<a href="https://www.linkedin.com/in/degninoumph" title="Dègninou YEHADJI, Epidemiologist & Data Scientist" target="_blank">Dègninou YEHADJI, MPH</a>');
+        map.attributionControl.addAttribution('<a href="https://www.linkedin.com/in/degninoumph" title="Dègninou YEHADJI, Epidemiologist & Data Scientist" target="_blank">Dègninou YEHADJI, MPH</a>');
         L.control.locate().addTo(map);
         var bounds_group = new L.featureGroup([]);
         var basemap0 = L.tileLayer('http://{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png', {
@@ -75,9 +73,6 @@
         });
         basemap0.addTo(map);
         function setBounds() {
-            if (bounds_group.getLayers().length) {
-                map.fitBounds(bounds_group.getBounds());
-            }
         }
         function pop_RgionMaritime_0(feature, layer) {
             layer.on({
@@ -535,7 +530,7 @@
         });
         osmGeocoder.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Typologie des structures sanitaires<br /><table><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_UnitsdeSoinsPriphriquesUSPTypeI0.png" /></td><td>Unités de Soins Périphériques (USP, Type I)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_UnitsdeSoinsPriphriquesUSPUSPII1.png" /></td><td>Unités de Soins Périphériques (USP, USP II)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_HpitaldeTypeIHDI2.png" /></td><td>Hôpital de Type I (HD I)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_HpitaldeTypeIIHDII3.png" /></td><td>Hôpital de Type II (HD II)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_HpitalSpcialis4.png" /></td><td>Hôpital Spécialisé </td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_CentreHospitalierRgionalCHR5.png" /></td><td>Centre Hospitalier Régional (CHR)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_CentreHospitalierUniversitaireCHU6.png" /></td><td>Centre Hospitalier Universitaire (CHU)</td></tr></table>': cluster_Typologiedesstructuressanitaires_6,'<img src="legend/Districtssanitaires_5.png" /> Districts sanitaires': layer_Districtssanitaires_5,'<img src="legend/RgiondesSavanes_4.png" /> Région des Savanes ': layer_RgiondesSavanes_4,'<img src="legend/RgiondelaKara_3.png" /> Région de la Kara ': layer_RgiondelaKara_3,'<img src="legend/RgionCentral_2.png" /> Région Central ': layer_RgionCentral_2,'<img src="legend/RgiondesPlateaux_1.png" /> Région des Plateaux ': layer_RgiondesPlateaux_1,'<img src="legend/RgionMaritime_0.png" /> Région Maritime ': layer_RgionMaritime_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'Typologie des structures sanitaires<br /><table><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_UnitsdeSoinsPriphriquesUSPTypeI0.png" /></td><td>Unités de Soins Périphériques (USP, Type I)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_UnitsdeSoinsPriphriquesUSPUSPII1.png" /></td><td>Unités de Soins Périphériques (USP, USP II)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_HpitaldeTypeIHDI2.png" /></td><td>Hôpital de Type I (HD I)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_HpitaldeTypeIIHDII3.png" /></td><td>Hôpital de Type II (HD II)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_HpitalSpcialis4.png" /></td><td>Hôpital Spécialisé </td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_CentreHospitalierRgionalCHR5.png" /></td><td>Centre Hospitalier Régional (CHR)</td></tr><tr><td style="text-align: center;"><img src="legend/Typologiedesstructuressanitaires_6_CentreHospitalierUniversitaireCHU6.png" /></td><td>Centre Hospitalier Universitaire (CHU)</td></tr></table>': cluster_Typologiedesstructuressanitaires_6,'<img src="legend/Districtssanitaires_5.png" /> Districts sanitaires': layer_Districtssanitaires_5,'<img src="legend/RgiondesSavanes_4.png" /> Région des Savanes ': layer_RgiondesSavanes_4,'<img src="legend/RgiondelaKara_3.png" /> Région de la Kara ': layer_RgiondelaKara_3,'<img src="legend/RgionCentral_2.png" /> Région Central ': layer_RgionCentral_2,'<img src="legend/RgiondesPlateaux_1.png" /> Région des Plateaux ': layer_RgiondesPlateaux_1,'<img src="legend/RgionMaritime_0.png" /> Région Maritime ': layer_RgionMaritime_0,}).addTo(map);
         map.on("zoomend", function(){
 
             if (map.hasLayer(layer_Typologiedesstructuressanitaires_6)) {
@@ -551,6 +546,19 @@
             }
         });
         setBounds();
+        var i = 0;
+        layer_Typologiedesstructuressanitaires_6.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['NOM_FS'] !== null?String('<div style="color: #000000; font-size: 8pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['NOM_FS']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Typologiedesstructuressanitaires_6'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
             if (map.hasLayer(layer_Typologiedesstructuressanitaires_6)) {
                 if (map.getZoom() <= 15 && map.getZoom() >= 5) {
                     layer_Typologiedesstructuressanitaires_6.eachLayer(function (layer) {
@@ -567,7 +575,16 @@
             initial: false,
             hideMarkerOnCollapse: true,
             propertyName: 'NOM_FS'}));
+        resetLabels([layer_Typologiedesstructuressanitaires_6]);
+        map.on("zoomend", function(){
+            resetLabels([layer_Typologiedesstructuressanitaires_6]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_Typologiedesstructuressanitaires_6]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_Typologiedesstructuressanitaires_6]);
+        });
         </script>
-
     </body>
 </html>
